@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            background-color: #099;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            height: 32px;
+            margin:  10px 0;
+            display: inline-flex;
+            align-items: center;
+            overflow:hidden;
+            width: auto;
+            padding: 10px 20px; 
+            max-width: 32px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+            -webkit-transition: max-width 0.5s;
+            transition: max-width 0.5s;
+            position: relative;
+        }
+
+        .button:hover {
+        max-width: 200px;
+        }
+        .text {
+        white-space: nowrap;
+        padding-left: 70px;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .side-nav{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .text-box{
+            padding: 0 40px;
+        }
+        #green{
+            background-color:green;
+        }
+        #blue{
+            background-color: skyblue;
+        }
+        #red{
+            background-color:red;
+        }
+        #black{
+            background-color:black;
+        }
+        .button:hover .text {
+        /* Show the text on hover */
+        padding-left: auto; /* Reset left position */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="side-nav">
+            <a id="green" href="#" class="button" >
+                <span class="text">Button 1</span>
+            </a>
+            <a id="blue" href="#" class="button">
+                <span class="text">Button 2</span>
+            </a>
+            <a id="red" href="#" class="button">
+                <span class="text">Button 3</span>
+            </a>
+            <a id="black" href="#" class="button">
+                <span class="text">Button 4</span>
+            </a>
+        </div>
+        <div class="text-box">  
+            <h1>Hoverable Sidenav buttons</h1>
+            <p>Hover over the buttons in the left side to open them</p>
+        </div>
+</div>
+</body>
+</html>
