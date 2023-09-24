@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+            font-weight: 600;
+        }
+        #name_feedback{
+            color:red
+        }
+        #email_feedback{
+            color:red
+        }
+        #pw_feedback{
+            color:red
+        }
+        #msg_feedback{
+            color:red
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5 w-50 p-4 rounded-0 shadow-lg">
+        <h2>Registration Form</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <div class="form-group my-3 d-flex">
+            Name:<input  type="text"   name="fname">
+            
+            <div id="name_feedback" class="ms-4"></div>
+        </div> 
+        <div class="form-group d-flex my-3"> 
+            Email:<input  type="email"  name="email">
+            <div id="email_feedback" class="ms-4"></div>
+            </div>
+            <div class="form-group d-flex my-3">
+            Website:<input  type="password"  name="password">
+            <div id="pw_feedback" class="ms-4"></div>
+            </div>
+            <div class="d-flex form-group">
+              Message:
+              <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                <div id="msg_feedback" class="ms-4"></div>
+            </div>
+            <input  type="submit" class="btn btn-dark mt-4 ms-5" value="Submit">
+          </form>
+    </div>
+<script>
+    // JavaScript to handle form submission and validation
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  let y = document.forms["myForm"]["email"].value;
+  let z = document.forms["myForm"]["password"].value;
+  let w = document.forms["myForm"]["message"].value;
+  if (x == ""||  y == "" || z== "") {
+    document.getElementById("name_feedback").textContent="This field is required";
+    document.getElementById("email_feedback").textContent="A valid Email address is required";
+    document.getElementById("pw_feedback").textContent="A valid URL is required";
+    document.getElementById("msg_feedback").textContent="This field is required";
+    return false;
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>

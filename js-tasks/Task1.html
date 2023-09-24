@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .conatiner{
+      width: max-content;
+      margin: auto;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: larger;
+      
+    }
+    button{
+      height:45px;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: larger;
+    }
+    input{
+      height: 40px;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: larger;
+    }
+  </style>
+  <head>
+    <title>Reverse Number</title>
+    <script type="text/javascript">
+      function reverseNumber(number) {
+        const reversedString = String(number).split("").reverse().join("");
+        return parseInt(reversedString);
+      }
+
+      function handleReverse() {
+        const inputNumber = document.getElementById("inputNumber").value;
+        const reversedNumber = reverseNumber(inputNumber);
+
+        document.getElementById("originalNumber").innerHTML =
+          "Original Number: " + inputNumber;
+        document.getElementById("reversedNumber").innerHTML =
+          "Reversed Number: " + reversedNumber;
+      }
+    </script>
+  </head>
+  <body>
+  
+      <div class="conatiner">
+      <input type="text" id="inputNumber" placeholder="Enter a number" />
+      <button onclick="handleReverse()">Reverse Number</button>
+  
+      <div id="originalNumber"></div>
+      <div id="reversedNumber"></div>
+    </div>
+    </body>
+    
+   
+</html>
